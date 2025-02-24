@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>猜拳遊戲</title>
+    <script>
+        function playGame(playerChoice) {
+            var choices = ["石頭", "剪刀", "布"];
+            var computerChoice = choices[Math.floor(Math.random() * 3)];
+            var result = "";
+
+            if (playerChoice === computerChoice) {
+                result = "平手！";
+            } else if (
+                (playerChoice === "石頭" && computerChoice === "剪刀") ||
+                (playerChoice === "剪刀" && computerChoice === "布") ||
+                (playerChoice === "布" && computerChoice === "石頭")
+            ) {
+                result = "你贏了！";
+            } else {
+                result = "你輸了！";
+            }
+
+            document.getElementById("result").innerText = "電腦選擇了：" + computerChoice + "。結果：" + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>猜拳遊戲</h1>
+    <button onclick="playGame('石頭')">石頭</button>
+    <button onclick="playGame('剪刀')">剪刀</button>
+    <button onclick="playGame('布')">布</button>
+    <h2 id="result"></h2>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
